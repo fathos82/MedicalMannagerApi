@@ -62,7 +62,4 @@ public class DoctorController {
         Doctor doctor = doctorRepository.findById(id).orElseThrow();
         return ResponseEntity.ok(new DoctorStatusResponse(doctor));
     }
-
-
-
 }
