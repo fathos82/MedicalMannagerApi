@@ -1,8 +1,9 @@
-package med.vol.api.dtos;
+package med.vol.api.dtos.request;
 
 import jakarta.validation.constraints.NotNull;
+import med.vol.api.dtos.AddressDto;
 
-public record DoctorUpdateDto(
+public record DoctorUpdate(
         @NotNull
         Long id,
         String name,

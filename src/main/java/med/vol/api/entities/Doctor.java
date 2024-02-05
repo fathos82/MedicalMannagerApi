@@ -3,8 +3,8 @@ package med.vol.api.entities;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.*;
-import med.vol.api.dtos.DoctorRequestDto;
-import med.vol.api.dtos.DoctorUpdateDto;
+import med.vol.api.dtos.request.DoctorRequest;
+import med.vol.api.dtos.request.DoctorUpdate;
 import med.vol.api.dtos.SpecializationTypes;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -31,7 +31,7 @@ public class Doctor {
     private Address address;
     private Boolean active;
 
-    public Doctor(@RequestBody @Valid DoctorRequestDto requestDoctor) {
+    public Doctor(@RequestBody @Valid DoctorRequest requestDoctor) {
         this.name = requestDoctor.name();
         this.email = requestDoctor.email();
         this.phone = requestDoctor.phone();
@@ -42,7 +42,7 @@ public class Doctor {
         this.active = true;
     }
 
-    public void update(@RequestBody @Valid DoctorUpdateDto requestDoctor) {
+    public void update(@RequestBody @Valid DoctorUpdate requestDoctor) {
         if (requestDoctor.name() != null) {
             this.name = requestDoctor.name();
         }
