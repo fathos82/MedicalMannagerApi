@@ -1,11 +1,11 @@
-package med.vol.api.entities;
+package med.vol.api.domain.entities;
 
 import jakarta.persistence.Embeddable;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import med.vol.api.dtos.AddressDto;
+import med.vol.api.domain.dtos.AddressDto;
 import org.springframework.web.bind.annotation.RequestBody;
 @Embeddable
 @Getter

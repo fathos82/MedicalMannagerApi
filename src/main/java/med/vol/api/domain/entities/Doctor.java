@@ -1,11 +1,11 @@
-package med.vol.api.entities;
+package med.vol.api.domain.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.*;
-import med.vol.api.dtos.request.DoctorRequest;
-import med.vol.api.dtos.request.DoctorUpdate;
-import med.vol.api.dtos.SpecializationTypes;
+import med.vol.api.domain.dtos.request.DoctorRequest;
+import med.vol.api.domain.dtos.request.DoctorUpdate;
+import med.vol.api.domain.dtos.SpecializationTypes;
 import org.springframework.web.bind.annotation.RequestBody;
 
 

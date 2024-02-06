@@ -1,7 +1,7 @@
-package med.vol.api.dtos.request;
+package med.vol.api.domain.dtos.request;
 
 import jakarta.validation.constraints.NotNull;
-import med.vol.api.dtos.AddressDto;
+import med.vol.api.domain.dtos.AddressDto;
 
 public record DoctorUpdate(
         @NotNull

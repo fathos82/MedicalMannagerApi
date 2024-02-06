@@ -1,4 +1,4 @@
-package med.vol.api.data;
+package med.vol.api.domain.data;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

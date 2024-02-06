@@ -1,12 +1,12 @@
-package med.vol.api.controllers;
+package med.vol.api.domain.controllers;
 
 import jakarta.validation.Valid;
-import med.vol.api.dtos.request.DoctorRequest;
-import med.vol.api.dtos.response.DoctorResponse;
-import med.vol.api.dtos.request.DoctorUpdate;
-import med.vol.api.dtos.response.DoctorStatusResponse;
-import med.vol.api.entities.Doctor;
-import med.vol.api.repositories.DoctorRepository;
+import med.vol.api.domain.dtos.request.DoctorRequest;
+import med.vol.api.domain.dtos.response.DoctorResponse;
+import med.vol.api.domain.dtos.request.DoctorUpdate;
+import med.vol.api.domain.dtos.response.DoctorStatusResponse;
+import med.vol.api.domain.entities.Doctor;
+import med.vol.api.domain.repositories.DoctorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

@@ -1,8 +1,8 @@
-package med.vol.api.dtos.response;
+package med.vol.api.domain.dtos.response;
 
-import med.vol.api.dtos.AddressDto;
-import med.vol.api.dtos.SpecializationTypes;
-import med.vol.api.entities.Doctor;
+import med.vol.api.domain.dtos.AddressDto;
+import med.vol.api.domain.dtos.SpecializationTypes;
+import med.vol.api.domain.entities.Doctor;
 
 public record DoctorStatusResponse(
         Long id,
