@@ -1,4 +1,4 @@
-package med.vol.api.error;
+package med.vol.api.infra.error;
 
 
 import jakarta.persistence.EntityNotFoundException;
