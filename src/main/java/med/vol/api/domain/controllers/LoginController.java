@@ -27,9 +27,7 @@ public class LoginController {
         Authentication authentication =
                 this.manager.authenticate(authenticationRequest);
         String tokenJwt = tokenService.generateToken((User) authentication.getPrincipal());
-
         return ResponseEntity.ok(new TokenAuthenticationResponse(tokenJwt));
-
     }
 
 
