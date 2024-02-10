@@ -4,11 +4,10 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.NonNull;
 import med.vol.api.domain.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
@@ -24,10 +23,9 @@ public class SecurityFilter extends OncePerRequestFilter {
     @Autowired
     private UserRepository userRepository;
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+    protected void doFilterInternal(@NonNull HttpServletRequest request, @NonNull HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
         String token = getToken(request);
-        System.out.println("TOKEN "+token);
         if (token != null) {
             String subject = tokenService.getSubject(token);
             UserDetails user = userRepository.findByLogin(subject);
@@ -38,10 +36,9 @@ public class SecurityFilter extends OncePerRequestFilter {
 
         filterChain.doFilter(request, response);    }
     private String getToken(HttpServletRequest request) {
-        System.out.println("AUTH "+request.getHeader("Authorization"));
         String token = request.getHeader("Authorization");
         if (token != null ) {
-            return token.substring(7, token.length());
+            return token.substring(7);
         }
         return null;
     }

@@ -35,7 +35,7 @@ public class Address {
     }
 
     public String toString() {
-        return "Andress(street=" + this.street + ", number=" + this.number + ", complement=" + this.complement + ")";
+        return "Address(street=" + this.street + ", number=" + this.number + ", complement=" + this.complement + ")";
     }
 
 }

@@ -1,11 +1,8 @@
 package med.vol.api.infra.security;
-
 import com.auth0.jwt.JWT;
-import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
-import com.auth0.jwt.interfaces.DecodedJWT;
 import med.vol.api.domain.entities.User;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -17,7 +14,7 @@ import java.time.ZoneOffset;
 @Service
 public class TokenService {
     @Value("${api.security.jwt.secret}")
-    private static String SECRET = "12345678";
+    private static String SECRET;
     private static final String ISSUER = "API Voll" ;
     public String generateToken(User user) {
         try {
