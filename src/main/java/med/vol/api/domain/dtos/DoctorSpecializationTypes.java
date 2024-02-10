@@ -1,6 +1,6 @@
 package med.vol.api.domain.dtos;
 
-public enum SpecializationTypes {
+public enum DoctorSpecializationTypes {
     CARDIOLOGIST,
     DERMATOLOGIST,
     ENDOCRINOLOGIST,

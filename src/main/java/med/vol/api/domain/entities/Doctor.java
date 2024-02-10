@@ -5,11 +5,8 @@ import jakarta.validation.Valid;
 import lombok.*;
 import med.vol.api.domain.dtos.request.DoctorRequest;
 import med.vol.api.domain.dtos.request.DoctorUpdate;
-import med.vol.api.domain.dtos.SpecializationTypes;
+import med.vol.api.domain.dtos.DoctorSpecializationTypes;
 import org.springframework.web.bind.annotation.RequestBody;
-
-
-
 
 @Table(name = "doctors")
 @Entity(name = "Doctor")
@@ -26,7 +23,7 @@ public class Doctor {
     private String crm;
     private String cpf;
     @Enumerated(EnumType.STRING)
-    private SpecializationTypes specialty;
+    private DoctorSpecializationTypes specialty;
     @Embedded
     private Address address;
     private Boolean active;

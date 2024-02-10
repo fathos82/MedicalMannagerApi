@@ -1,7 +1,7 @@
 package med.vol.api.domain.dtos.response;
 
 import med.vol.api.domain.dtos.AddressDto;
-import med.vol.api.domain.dtos.SpecializationTypes;
+import med.vol.api.domain.dtos.DoctorSpecializationTypes;
 import med.vol.api.domain.entities.Doctor;
 
 public record DoctorStatusResponse(
@@ -10,7 +10,7 @@ public record DoctorStatusResponse(
         String phone,
         String email,
         String crm,
-        AddressDto address, SpecializationTypes specialization
+        AddressDto address, DoctorSpecializationTypes specialization
 
 ) {
     public DoctorStatusResponse(Doctor doctor) {
