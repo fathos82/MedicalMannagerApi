@@ -1,0 +1,76 @@
+[33mcommit d3faedf83b9a94ff472be8be42a69df8f5defd34[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Athos Ferreira <fathos82@gmail.com>
+Date:   Sat Feb 10 14:36:43 2024 -0300
+
+    Rename 'SpecializtionTypes' to 'DoctorSpecializationTypes'
+
+[33mcommit 106ac37b25133b10c85267a8974d49a7f4b2b693[m
+Author: Athos Ferreira <fathos82@gmail.com>
+Date:   Sat Feb 10 14:34:26 2024 -0300
+
+    Add Patient entity along with its Controller, Repository, and basic operations (POST, GET, DELETE).
+    
+    This commit introduces the Patient entity class representing patient information, including name, email, CPF, and activity status. Additionally, a PatientController is implemented to handle registration, retrieval, and deletion of patient data. The PatientRepository facilitates database operations for patient entities. Basic CRUD operations (POST for registration, GET for retrieval, and DELETE for deactivation) are implemented and functional.
+
+[33mcommit 74086fc4e077b9489eb34bb8c9a30dee717b7a75[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Athos Ferreira <fathos82@gmail.com>
+Date:   Thu Feb 8 22:03:46 2024 -0300
+
+    feat: Finalized the Athetication with Tokens, now after generating the token, the next request are validated by a filter.
+    
+    Main changes include:
+    
+    - Added a Filter (Security Filter) responsable to reject any request wich the token is not valid
+    - Added a method in TokenService to check if the token obtained from header is valid according user's email.
+    - Changes in Security Config: Before the Validation the token, only the route '/login' is acepts requests, and the other routes require a generated token
+
+[33mcommit e48894015d322512ebbca046399ab9a8c900cdb6[m
+Author: Athos Ferreira <fathos82@gmail.com>
+Date:   Thu Feb 8 19:14:01 2024 -0300
+
+    feat: Tokens are generated to allow clients to use the application after login.
+    
+    Main changes include:
+    
+    - Added a service to generate tokens for clients to use the application after login. This service generates tokens containing email and date information.
+    - Defined an environment variable for the secret used to generate the tokens.
+
+[33mcommit d2eab3f7eaeb4921843d99e43184e564c8a774e2[m
+Author: Athos Ferreira <fathos82@gmail.com>
+Date:   Thu Feb 8 15:12:17 2024 -0300
+
+    feat: Defined security configurations and created authentication service.
+    
+    Main changes include:
+    
+    - Added a new User entity to represent the user for authentication, including only email and password fields.
+    - Implemented a login service for user authentication.
+    - Configured authentication model: disabled CSRF, defined session creation policy (Stateless), and used BCryptPasswordEncoder as the password encoder.
+
+[33mcommit f92cd9f0c35d822f1bfb8707aea10ce2590b0b6a[m
+Author: Athos Ferreira <fathos82@gmail.com>
+Date:   Tue Feb 6 14:01:15 2024 -0300
+
+    Just making some improvements in ExceptionHandler
+
+[33mcommit 14ccf9ad0a5583a18fc2210649dfbe053271db3c[m
+Author: Athos Ferreira <fathos82@gmail.com>
+Date:   Mon Feb 5 19:39:21 2024 -0300
+
+    feat: Add Execption Handler according the status code
+                - Updates include 400 for entites not found and the 404 for not valid arguments.
+
+[33mcommit 2a5dd00c383acf6f093a83087b600655f7b9f38b[m
+Author: Athos Ferreira <fathos82@gmail.com>
+Date:   Mon Feb 5 18:35:28 2024 -0300
+
+    feat: Add explicit HTTP status codes to DoctorController operations
+    
+    - Each operation in DoctorController now returns a ResponseEntity with appropriate HTTP status codes.
+    - Updates include 201 Created for registration, 200 OK for update and retrieval, and 204 No Content for deletion.
+
+[33mcommit 93d25e91c607dbe5fe9fa87d1623b391e730f2d4[m
+Author: Athos Ferreira <fathos82@gmail.com>
+Date:   Mon Feb 5 09:02:35 2024 -0300
+
+    First Commit: Adding Dtos to Request and Response,Adding Entities that represents de Tables in sql, and Adding Controllers to Doctos with PUT, UPDATE, DELETE operations
