@@ -2,7 +2,7 @@ package med.vol.api.domain.dtos.request;
 
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotNull;
-import med.vol.api.domain.dtos.DoctorSpecializationTypes;
+import med.vol.api.domain.enums.DoctorSpecializationTypes;
 
 import java.time.LocalDateTime;
 

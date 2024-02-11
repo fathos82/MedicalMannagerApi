@@ -1,0 +1,2 @@
+ALTER TABLE appointments
+ADD COLUMN cancellation_reason ENUM('DOCTOR_CANCEL','PATIENT_CANCEL','OTHER');

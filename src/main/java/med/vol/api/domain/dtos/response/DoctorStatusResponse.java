@@ -1,7 +1,7 @@
 package med.vol.api.domain.dtos.response;
 
 import med.vol.api.domain.dtos.AddressDto;
-import med.vol.api.domain.dtos.DoctorSpecializationTypes;
+import med.vol.api.domain.enums.DoctorSpecializationTypes;
 import med.vol.api.domain.entities.Doctor;
 
 public record DoctorStatusResponse(

@@ -5,7 +5,7 @@ import jakarta.validation.Valid;
 import lombok.*;
 import med.vol.api.domain.dtos.request.DoctorRequest;
 import med.vol.api.domain.dtos.request.DoctorUpdate;
-import med.vol.api.domain.dtos.DoctorSpecializationTypes;
+import med.vol.api.domain.enums.DoctorSpecializationTypes;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @Table(name = "doctors")

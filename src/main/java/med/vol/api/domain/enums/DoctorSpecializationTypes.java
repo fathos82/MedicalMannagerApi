@@ -1,4 +1,4 @@
-package med.vol.api.domain.dtos;
+package med.vol.api.domain.enums;
 
 public enum DoctorSpecializationTypes {
     CARDIOLOGIST,

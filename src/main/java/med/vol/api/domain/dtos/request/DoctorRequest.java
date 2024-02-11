@@ -3,7 +3,7 @@ package med.vol.api.domain.dtos.request;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
 import med.vol.api.domain.dtos.AddressDto;
-import med.vol.api.domain.dtos.DoctorSpecializationTypes;
+import med.vol.api.domain.enums.DoctorSpecializationTypes;
 
 public record DoctorRequest(
         @Size(min = 3, max = 100)

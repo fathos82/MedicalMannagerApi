@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import med.vol.api.domain.dtos.request.AppointmentRequest;
+import med.vol.api.domain.enums.CancellationReasonTypes;
 
 import java.time.LocalDateTime;
 
@@ -29,5 +31,20 @@ public class Appointment {
 
     LocalDateTime date;
 
+    @Column(name = "cancellation_reason")
+    @Enumerated(EnumType.STRING)
+    CancellationReasonTypes cancellationReason;
 
+    public Appointment(Doctor doctor, Patient patient, LocalDateTime date) {
+        this.doctor = doctor;
+        this.patient = patient;
+        this.date = date;
+        this.cancellationReason = null;
+    }
+
+
+
+    public void cancel(CancellationReasonTypes cancellationReason) {
+        this.cancellationReason = cancellationReason;
+    }
 }
