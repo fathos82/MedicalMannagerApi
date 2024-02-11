@@ -1,4 +1,4 @@
-package med.vol.api.domain.controllers;
+package med.vol.api.controllers;
 
 import med.vol.api.domain.dtos.request.LoginRequest;
 import med.vol.api.domain.dtos.response.TokenAuthenticationResponse;

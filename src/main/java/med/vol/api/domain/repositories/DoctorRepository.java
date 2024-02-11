@@ -1,7 +1,7 @@
 package med.vol.api.domain.repositories;
 
 import lombok.NonNull;
-import med.vol.api.domain.dtos.DoctorSpecializationTypes;
+import med.vol.api.domain.enums.DoctorSpecializationTypes;
 import med.vol.api.domain.entities.Doctor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -16,14 +16,16 @@ public interface DoctorRepository extends JpaRepository<Doctor, Long> {
     Page<Doctor> findAllByActiveTrue(Pageable pageable);
 
     @Query("""
-            SELECT d FROM Doctor d 
+            SELECT d FROM Doctor d
             WHERE d.specialty = :specialty
-            and 
+            and
             d.active = true
             and
             d.id not in(
             SELECT a.doctor.id FROM Appointment a
             WHERE a.date = :date
+            ORDER BY rand()
+            LIMIT 1
             )
             """)
 
